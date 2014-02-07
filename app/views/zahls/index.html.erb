@@ -1,0 +1,27 @@
+<h1>Listing zahls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Zahl</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zahls.each do |zahl| %>
+      <tr>
+        <td><%= zahl.zahl %></td>
+        <td><%= link_to 'Show', zahl %></td>
+        <td><%= link_to 'Edit', edit_zahl_path(zahl) %></td>
+        <td><%= link_to 'Destroy', zahl, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Zahl', new_zahl_path %>
